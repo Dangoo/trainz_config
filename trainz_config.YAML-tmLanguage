@@ -11,7 +11,7 @@ patterns:
 
 - comment: Numbers
   name: constant.numeric.trainz_config
-  match: ([0-9]+([\.,])?([0-9])*)
+  match: ([0-9]+([\.])?([0-9])*)
 
 - comment: Simple string
   name: string.quoted.double.trainz_config
@@ -20,7 +20,7 @@ patterns:
 
 - comment: KUID <kuid:xxxx:xxxx>
   name: variable.parameter.kuid.trainz_config
-  match: ((\<kuid[2]?)[0-9\:]*\>)
+  match: ((\<kuid[2]?)[0-9\:\-]*\>)
 
 - comment: Closing curly bracket
   name: meta.brace.curly.trainz_config

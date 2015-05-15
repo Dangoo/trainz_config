@@ -22,7 +22,7 @@
 			<key>comment</key>
 			<string>Numbers</string>
 			<key>match</key>
-			<string>([0-9]+([\.,])?([0-9])*)</string>
+			<string>([0-9]+([\.])?([0-9])*)</string>
 			<key>name</key>
 			<string>constant.numeric.trainz_config</string>
 		</dict>
@@ -40,7 +40,7 @@
 			<key>comment</key>
 			<string>KUID &lt;kuid:xxxx:xxxx&gt;</string>
 			<key>match</key>
-			<string>((\&lt;kuid[2]?)[0-9\:]*\&gt;)</string>
+			<string>((\&lt;kuid[2]?)[0-9\:\-]*\&gt;)</string>
 			<key>name</key>
 			<string>variable.parameter.kuid.trainz_config</string>
 		</dict>
