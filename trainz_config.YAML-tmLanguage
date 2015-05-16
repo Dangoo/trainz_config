@@ -10,7 +10,7 @@ patterns:
   match: ([a-z\-\_]+[^\n\S])
 
 - comment: Numbers
-  name: constant.numeric.trainz_config
+  name: constant.other.trainz_config
   match: ([0-9]+([\.])?([0-9])*)
 
 - comment: Simple string
@@ -19,7 +19,7 @@ patterns:
   end: (")
 
 - comment: KUID <kuid:xxxx:xxxx>
-  name: variable.parameter.kuid.trainz_config
+  name: variable.other.constant.kuid.trainz_config
   match: ((\<kuid[2]?)[0-9\:\-]*\>)
 
 - comment: Closing curly bracket
@@ -27,7 +27,7 @@ patterns:
   match: \}
 
 - comment: Container with string identifier
-  name: constant.numeric
+  name: constant.other.object
   begin: ([a-z\-\_0-9]+\n)
   beginCaptures:
     '0': {name: variable.other.object}
@@ -36,7 +36,7 @@ patterns:
     '0': {name: meta.brace.curly.trainz_config}
 
 - comment: Container with numeric identifier
-  name: constant.numeric
+  name: constant.other.object
   begin: (^[0-9\s]+\n)
   beginCaptures:
     '0': {name: variable.other.object}
