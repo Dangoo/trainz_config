@@ -1,0 +1,41 @@
+{
+    "name": "acs",
+    "displayName": "ACS Text",
+    "description": "",
+    "version": "0.0.1",
+    "scripts": {
+        "yaml2json": "npx js-yaml syntaxes/acs_text.tmLanguage.yml > syntaxes/acs_text.tmLanguage.json"
+    },
+    "engines": {
+        "vscode": "^1.53.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "acs",
+                "aliases": [
+                    "Trainz Config",
+                    "ACS",
+                    "ACS Text"
+                ],
+                "extensions": [
+                    "Config.txt"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "acs",
+                "scopeName": "text.acs_text",
+                "path": "./syntaxes/acs_text.tmLanguage.json"
+            }
+        ]
+    },
+    "devDependencies": {
+        "js-yaml": "^4.0.0"
+    }
+}

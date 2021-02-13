@@ -1,0 +1,26 @@
+kuid                                    <kuid:1234:1234>
+kind                                    "track"
+istrack                                 0,2,3
+username                                "Demo Asset"
+trainz-build                            3.9
+category-era                            "2000s"
+category-class                          "TR"
+category-region                         "00"
+
+mesh-table
+{
+  default
+  {
+    auto-create                         1
+    mesh                                "mesh.im"
+  }
+
+  test
+  {
+
+  }
+}
+
+kuid-table
+{
+}
