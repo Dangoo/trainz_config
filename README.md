@@ -1,6 +1,6 @@
 # Trainz Config
 
-Language definition for Trainz Config.txt files for Visual Studio Code
+Language definition for [Trainz Config.txt](http://online.ts2009.com/mediaWiki/index.php/ACS_Text_Format) files for Visual Studio Code
 
 ## Usage
 
