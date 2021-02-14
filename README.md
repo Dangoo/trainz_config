@@ -1,10 +1,6 @@
 # Trainz Config
 
-Language definition for Trainz Config.txt files for Sublime Text
-
-## Installation
-
-Find it as [Trainz Config]() through [Package Conrol](https://packagecontrol.io/)
+Language definition for Trainz Config.txt files for Visual Studio Code
 
 ## Usage
 

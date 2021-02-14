@@ -1,0 +1,86 @@
+name: Trainz Config
+scopeName: text.acs_text
+fileTypes: [Config.txt]
+uuid: f68ed429-650e-49f9-9c38-88a939f206a6
+foldingStartMarker: "{"
+foldingStopMarker: "}"
+
+repository:
+  key:
+    comment: Keys
+    name: variable.other
+    match: ([a-z\-\_]+)
+
+  number:
+    comment: Numeric Value
+    name: constant.numeric.acs_text
+    match: (-?[0-9]+[\.]?[0-9]*)
+
+  string:
+    comment: String Value
+    name: string.quoted.double.acs_text
+    begin: '"'
+    beginCaptures:
+      "0":
+        name: punctuation.definition.string.begin.acs_text
+    end: '"'
+    endCaptures:
+      "0":
+        name: punctuation.definition.string.end.acs_text
+
+  kuid:
+    comment: KUID <kuid:xxxx:xxxx>
+    name: string.unquoted.acs_text
+    begin: (\<(kuid[2]?))
+    beginCaptures:
+      "0":
+        name: constant.language.acs_text
+    end: (\>)
+    patterns:
+      - match: ":"
+        name: punctuation.separator.kuid.acs_text
+      - match: ([0-9]*)
+        name: constant.numeric.acs_text
+
+  number-array:
+    comment: Numeric Array
+    name: meta.structure.numeric-array.acs_text
+    begin: (-?[0-9])
+    end: ([0-9])
+    patterns:
+      - include: "#number"
+      - match: '\s*,\s*'
+        name: punctuation.separator.array.json
+
+  container:
+    comment: Container
+    name: constant.other.object
+    begin: '(\{)$'
+    beginCaptures:
+      "0":
+        name: meta.brace.curly.acs_text
+    end: '^\s*(\})'
+    endCaptures:
+      "0":
+        name: meta.brace.curly.acs_text
+    patterns:
+      - include: "#key-value-pair"
+
+  value:
+    patterns:
+      - include: "#key"
+      - include: "#number"
+      - include: "#number-array"
+      - include: "#string"
+      - include: "#kuid"
+      - include: "#container"
+
+  key-value-pair:
+    begin: '^\s*'
+    end: '$'
+    patterns:
+      - include: "#key"
+      - include: "#value"
+
+patterns:
+  - include: "#key-value-pair"
