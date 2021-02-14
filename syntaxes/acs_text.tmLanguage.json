@@ -11,12 +11,12 @@
     "key": {
       "comment": "Keys",
       "name": "variable.other",
-      "match": "([a-z\\-\\_]+[^\\n\\S])"
+      "match": "([a-z\\-\\_]+)"
     },
     "number": {
       "comment": "Numeric Value",
       "name": "constant.numeric.acs_text",
-      "match": "([0-9]+([\\.])?([0-9])*)"
+      "match": "(-?[0-9]+[\\.]?[0-9]*)"
     },
     "string": {
       "comment": "String Value",
@@ -58,14 +58,14 @@
     "number-array": {
       "comment": "Numeric Array",
       "name": "meta.structure.numeric-array.acs_text",
-      "begin": "([0-9])",
+      "begin": "(-?[0-9])",
       "end": "([0-9])",
       "patterns": [
         {
           "include": "#number"
         },
         {
-          "match": ",",
+          "match": "\\s*,\\s*",
           "name": "punctuation.separator.array.json"
         }
       ]
@@ -73,13 +73,13 @@
     "container": {
       "comment": "Container",
       "name": "constant.other.object",
-      "begin": "\\{",
+      "begin": "(\\{)$",
       "beginCaptures": {
         "0": {
           "name": "meta.brace.curly.acs_text"
         }
       },
-      "end": "\\}",
+      "end": "^\\s*(\\})",
       "endCaptures": {
         "0": {
           "name": "meta.brace.curly.acs_text"
@@ -114,6 +114,8 @@
       ]
     },
     "key-value-pair": {
+      "begin": "^\\s*",
+      "end": "$",
       "patterns": [
         {
           "include": "#key"

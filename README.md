@@ -1,65 +1,37 @@
-# acs README
+# Trainz Config
 
-This is the README for your extension "acs". After writing up a brief description, we recommend including the following sections.
+Language definition for Trainz Config.txt files for Visual Studio Code
 
-## Features
+## Usage
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+This package is supposed to help you creating / editing Config.txt files for N3Vs Trainz Simulator.
+If you open a Config.txt file in Sublime Text it will automaticly choose Trainz Config as language definition, so no work for you here!
+For the best results set the indentation to spaces and set the tab size to 2.
 
-For example if there is an image subfolder under your extension project workspace:
+The values are indented by 40 characters (20 tabs), containers are framed by curly brackets with a line break before and after them.
 
-\!\[feature X\]\(images/feature-x.png\)
+### Example
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+```text
+kuid                                    <kuid:XXXXXX:XXXXXX>
+kind                                    "track"
+istrack                                 0
+username                                "Demo Asset"
+trainz-build                            3.9
+category-era                            "2000s"
+category-class                          "TR"
+category-region                         "00"
 
-## Requirements
+mesh-table
+{
+  default
+  {
+    auto-create                         1
+    mesh                                "mesh.im"
+  }
+}
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+kuid-table
+{
+}
+```
